@@ -32,16 +32,15 @@
                     }.bind(this));
             });
         }
-
-        addInputHandler(fn) {
+        addInputHandler(fn) { 
             console.log('Setting input handler for form');
             this.$formElement.on('input', '[name="emailAddress"]', function(event) {
                 var emailAddress = event.target.value;
-                var message;
-                //console.log(fn(emailAddress));
-                if (fn(emailAddress)) {
+                var message = '';
+                // console.log(fn(emailAddress));
+                if (fn(emailAddress)) { 
                     event.target.setCustomValidity('');
-                }else{
+                } else {
                     message = emailAddress + ' is not authorized!';
                     event.target.setCustomValidity(message);
                 }
